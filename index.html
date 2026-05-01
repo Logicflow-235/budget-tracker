@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="budget.css">
+</head>
+<body>
+
+    <header>
+        <h1>Budget<br><span>Tracker</span></h1>
+        <div class="total-display">
+            <p>Total Spent</p>
+            <h2 id="total">KES 0</h2>
+        </div>
+    </header>
+
+    <!-- FORM -->
+    <div class="form-section">
+        <div class="field">
+            <label for="expense-name">Expense Name</label>
+            <input type="text" id="expense-name" placeholder="e.g. Lunch">
+        </div>
+        <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="">Select category</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="shopping">Shopping</option>
+                <option value="health">Health</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="amount">Amount (KES)</label>
+            <input type="number" id="amount" placeholder="0">
+        </div>
+        <button id="add-btn">Add</button>
+    </div>
+
+    <!-- SUMMARY BARS -->
+    <div class="summary">
+        <h3>Spending by Category</h3>
+        <div class="bars">
+            <div class="bar-row">
+                <span class="bar-label">Food</span>
+                <div class="bar-track"><div class="bar-fill food" id="bar-food"></div></div>
+                <span class="bar-amount" id="amt-food">KES 0</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Transport</span>
+                <div class="bar-track"><div class="bar-fill transport" id="bar-transport"></div></div>
+                <span class="bar-amount" id="amt-transport">KES 0</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Entertainment</span>
+                <div class="bar-track"><div class="bar-fill entertainment" id="bar-entertainment"></div></div>
+                <span class="bar-amount" id="amt-entertainment">KES 0</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Shopping</span>
+                <div class="bar-track"><div class="bar-fill shopping" id="bar-shopping"></div></div>
+                <span class="bar-amount" id="amt-shopping">KES 0</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Health</span>
+                <div class="bar-track"><div class="bar-fill health" id="bar-health"></div></div>
+                <span class="bar-amount" id="amt-health">KES 0</span>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Other</span>
+                <div class="bar-track"><div class="bar-fill other" id="bar-other"></div></div>
+                <span class="bar-amount" id="amt-other">KES 0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPENSE LIST -->
+    <div class="list-section">
+        <div class="list-header">
+            <span>Name</span>
+            <span>Category</span>
+            <span>Amount</span>
+            <span></span>
+        </div>
+        <ul id="expense-list"></ul>
+    </div>
+
+    <script src="budget.js">
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+  
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --surface2: #222222;
+            --border: #2e2e2e;
+            --text: #f0f0f0;
+            --muted: #888;
+            --food: #ff6b35;
+            --transport: #3b82f6;
+            --entertainment: #a855f7;
+            --shopping: #ec4899;
+            --health: #22c55e;
+            --other: #eab308;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Syne', sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        
+        header {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        header h1 span {
+            color: var(--food);
+        }
+
+        .total-display {
+            text-align: right;
+        }
+
+        .total-display p {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .total-display h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'DM Mono', monospace;
+            color: var(--food);
+        }
+
+        /* FORM */
+        .form-section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 120px 100px;
+            gap: 16px;
+            align-items: end;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field label {
+            font-size: 0.7rem;
+            font-family: 'DM Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+        }
+
+        .field input,
+        .field select {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-family: 'DM Mono', monospace;
+            font-size: 1rem;
+            padding: 12px 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            width: 100%;
+        }
+
+        .field input:focus,
+        .field select:focus {
+            border-color: var(--food);
+        }
+
+        .field select option {
+            background: var(--surface2);
+        }
+
+        #add-btn {
+            background: var(--food);
+            color: #000;
+            border: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.2s, transform 0.1s;
+            height: 47px;
+        }
+
+        #add-btn:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        #add-btn:active {
+            transform: translateY(0);
+        }
+
+        
+        .summary {
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .summary h3 {
+            font-size: 0.7rem;
+            font-family: 'DM Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 110px 1fr 80px;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bar-label {
+            font-size: 0.75rem;
+            font-family: 'DM Mono', monospace;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .bar-track {
+            background: var(--surface);
+            height: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .bar-fill.food         { background: var(--food); }
+        .bar-fill.transport    { background: var(--transport); }
+        .bar-fill.entertainment{ background: var(--entertainment); }
+        .bar-fill.shopping     { background: var(--shopping); }
+        .bar-fill.health       { background: var(--health); }
+        .bar-fill.other        { background: var(--other); }
+
+        .bar-amount {
+            font-size: 0.8rem;
+            font-family: 'DM Mono', monospace;
+            color: var(--text);
+            text-align: right;
+        }
+
+        /* EXPENSE LIST */
+        .list-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .list-header {
+            display: grid;
+            grid-template-columns: 1fr 130px 100px 80px;
+            gap: 16px;
+            padding: 0 16px 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .list-header span {
+            font-size: 0.7rem;
+            font-family: 'DM Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+        }
+
+        #expense-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 2px;
+        }
+
+        
+        .expense-item {
+            display: grid;
+            grid-template-columns: 1fr 130px 100px 80px;
+            gap: 16px;
+            align-items: center;
+            padding: 16px;
+            background: var(--surface);
+            border-left: 3px solid transparent;
+            transition: background 0.2s;
+            animation: slideIn 0.25s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .expense-item:hover {
+            background: var(--surface2);
+        }
+
+        .expense-item.food          { border-left-color: var(--food); }
+        .expense-item.transport     { border-left-color: var(--transport); }
+        .expense-item.entertainment { border-left-color: var(--entertainment); }
+        .expense-item.shopping      { border-left-color: var(--shopping); }
+        .expense-item.health        { border-left-color: var(--health); }
+        .expense-item.other         { border-left-color: var(--other); }
+
+        .expense-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .expense-category {
+            font-size: 0.75rem;
+            font-family: 'DM Mono', monospace;
+            padding: 4px 10px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .expense-category.food          { background: #ff6b3520; color: var(--food); }
+        .expense-category.transport     { background: #3b82f620; color: var(--transport); }
+        .expense-category.entertainment { background: #a855f720; color: var(--entertainment); }
+        .expense-category.shopping      { background: #ec489920; color: var(--shopping); }
+        .expense-category.health        { background: #22c55e20; color: var(--health); }
+        .expense-category.other         { background: #eab30820; color: var(--other); }
+
+        .expense-amount {
+            font-family: 'DM Mono', monospace;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .expense-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .edit-btn, .delete-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .edit-btn:hover {
+            border-color: var(--transport);
+            color: var(--transport);
+        }
+
+        .delete-btn:hover {
+            border-color: var(--food);
+            color: var(--food);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+    

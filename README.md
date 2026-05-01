@@ -1,7 +1,7 @@
 
 # Budget Tracker
 
-A lightweight, client-side expense tracking app built with vanilla JavaScript. No frameworks, no dependencies — just clean HTML, CSS and JS with localStorage for persistence.
+A lightweight, client-side expense tracking app built with vanilla JavaScript. No frameworks, no dependencies — just clean HTML, CSS and JS with localStorage for persistence. View site at [Live Demo](https://logicflow-235.github.io/budget-tracker/)
 
 ## Features
 
